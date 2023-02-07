@@ -1,8 +1,6 @@
 # Schema Design
 
-
 ```js
-
 Story: {
     heading
     likes_count
@@ -14,15 +12,17 @@ Story: {
     status
 }
 
+// 100 sentence limit
 Sentence {
     storyId
     position
     rank
     status : {
-        isWinnerByVote
+        winnerByVote
         rejectedByAuthor
-        isWinnerByAuthor
+        winnerByAuthor
         locked
+        nextSentence
     }
     likes_count
     text
@@ -91,3 +91,5 @@ User {
 select * from entity_likes from etype = 1 and postId = 2;
 
 
+FOR FUTURE:
+-> Too many active collaborators on this story -> get lost
