@@ -14,6 +14,6 @@ func testServer(c echo.Context) error {
 
 func createUser(c echo.Context) error {
 	defer utils.Recovery()
-	user := postgres.CreateUserDB(c.FormValue("name"), c.FormValue("age"), c.FormValue("email"))
+	user := postgres.CreateUserDB(c.FormValue("name"), c.FormValue("email"))
 	return c.JSON(http.StatusOK, user)
 }

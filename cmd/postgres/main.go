@@ -10,12 +10,12 @@ var PostgresDB *gorm.DB
 var err error
 
 func InitPostgresDB() {
-	PostgresDB.AutoMigrate(&User{})
+	PostgresDB.AutoMigrate(&Story{}, &User{}, &Sentence{}, &Tags{}, &UserStory{}, &EntityLikes{})
 }
 
 func ConnectPostgresDatabase() *gorm.DB {
 	// postgres://sarthak:4vyfLZJfTCbg2uBR4Clky4ETsEOlFRW0@dpg-cfdu894gqg45rnvbps10-a.singapore-postgres.render.com/main_2azm
-	connStr := "host=dpg-cfdu894gqg45rnvbps10-a.singapore-postgres.render.com user=sarthak password=4vyfLZJfTCbg2uBR4Clky4ETsEOlFRW0 dbname=main_2azm port=5432 "
+	connStr := "host=localhost user=sarthak password=12345678 dbname=storytunes port=5432 sslmode=disable TimeZone=Asia/Shanghai"
 	PostgresDB, err = gorm.Open(postgres.Open(connStr), &gorm.Config{})
 	utils.HandleError(err)
 	return PostgresDB
