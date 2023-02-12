@@ -7,8 +7,7 @@ import (
 func CreateUserDB(name string, email string) User {
 	utils.HandleError(err)
 	user := &User{
-		Name: name,
-
+		Name:  name,
 		Email: email,
 	}
 	PostgresDB.Create(user)

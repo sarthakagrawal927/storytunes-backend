@@ -3,9 +3,10 @@
 ## POC
 
 - Basic Website
-- Backend
-  - Authentication
+  - Authentication (Next-Auth)
   - Integrate GIPHY
+
+- Backend
   - Realtime (ELIXIR)
     - Feed (Collaborators & Likes on each Story)
     - Single Story (New sentence, new vote, active collaborators)
@@ -19,4 +20,3 @@
       - /vote/:storyID/:sentenceID
       - /story
       - /comment
-      - /auth
